@@ -1,0 +1,231 @@
+.game-board {
+  max-width: 940px;
+  margin-inline: auto;
+  border: 1px solid #6a4733;
+  background: linear-gradient(135deg, #211610, #171212 60%, #211610);
+  box-shadow: inset 0 0 0 5px #d49d5f0d;
+}
+.game-overview, .game-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: .95rem clamp(.95rem, 3vw, 1.8rem);
+}
+.game-overview h2 { color: var(--gold-bright); font: bold clamp(1.6rem, 4vw, 2.3rem)/1.2 var(--serif); margin-top: .18rem; }
+.game-progress label, .game-energy label {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  color: var(--muted);
+  font-size: .88rem;
+}
+.game-progress label span, .game-energy label span { color: var(--gold-bright); font-variant-numeric: tabular-nums; }
+.game-board progress {
+  appearance: none;
+  display: block;
+  margin-top: .45rem;
+  width: 100%;
+  height: 7px;
+  background: #392923;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.game-board progress::-webkit-progress-bar { background: #392923; }
+.game-board progress::-webkit-progress-value { background: linear-gradient(90deg, #b85d32, #f4bf7e); }
+.game-board progress::-moz-progress-bar { background: linear-gradient(90deg, #b85d32, #f4bf7e); }
+.game-arena {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 198px;
+  padding: 1.4rem clamp(.5rem, 2vw, 1.5rem);
+  border-block: 1px solid #593627;
+  overflow: hidden;
+  background: radial-gradient(ellipse, #4b271c 0%, #221612 46%, #130f0f 84%);
+}
+.game-ring {
+  position: absolute;
+  width: min(84%, 680px);
+  height: 76%;
+  border: 1px solid #c18a5440;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #c18a5413, 0 0 0 18px #c18a540c, inset 0 0 60px #b45b302a;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+.flame-list { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; gap: clamp(.22rem, 1.5vw, 1.15rem); }
+.flame-button {
+  --flame: #ffab71;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: .45rem;
+  width: min(17%, 128px);
+  min-width: 106px;
+  padding: .45rem .12rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #f5dbc6;
+  font-size: .9rem;
+  line-height: 1.35;
+  text-align: center;
+  cursor: pointer;
+}
+.flame-button:hover:not([aria-disabled="true"]) { border-color: #c4986c5b; background: #2f1b18c7; }
+.flame-button:active:not([aria-disabled="true"]) .flame-orb { transform: scale(.9); }
+.flame-button[aria-disabled="true"] { cursor: default; }
+.flame-orb {
+  display: grid;
+  position: relative;
+  place-items: center;
+  width: clamp(60px, 9vw, 94px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--flame) 49%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--flame) 27%, #1f1516), #251818 74%);
+  box-shadow: inset 0 0 15px color-mix(in srgb, var(--flame) 15%, transparent);
+  transition: transform .25s, opacity .25s;
+}
+.flame-orb::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px dashed color-mix(in srgb, var(--flame) 25%, transparent);
+  border-radius: 50%;
+}
+.flame-aura {
+  position: relative;
+  width: 39%;
+  height: 41%;
+  border-radius: 70% 0 67% 58%;
+  background: radial-gradient(circle at 37% 70%, #fff8e9, var(--flame) 35%, color-mix(in srgb, var(--flame), #742348) 78%);
+  box-shadow: 0 0 18px var(--flame);
+  transform: rotate(-27deg);
+  animation: flicker var(--flicker-time, 2.6s) ease-in-out infinite alternate;
+}
+.flame-aura::after {
+  content: "";
+  position: absolute;
+  inset: 23% 25% 14% 19%;
+  border-radius: 75% 0 65% 65%;
+  background: #fff0dca0;
+}
+.flame-button[data-shape="lotus"] .flame-aura {
+  width: 37%;
+  height: 35%;
+  border-radius: 50% 55% 38% 60%;
+  box-shadow: 0 0 18px var(--flame), -9px 6px 0 -3px var(--flame), 8px -6px 0 -3px var(--flame);
+}
+.flame-button[data-shape="shard"] .flame-aura {
+  border-radius: 0;
+  clip-path: polygon(52% 0, 88% 36%, 72% 54%, 96% 69%, 43% 100%, 12% 75%, 25% 46%);
+}
+.flame-button[data-shape="spire"] .flame-aura { width: 32%; height: 51%; border-radius: 85% 3% 75% 55%; }
+.flame-button[data-shape="comet"] .flame-aura { width: 32%; height: 56%; border-radius: 85% 0 60% 44%; --tilt: -54deg; }
+.flame-button[data-shape="wave"] .flame-aura { width: 49%; height: 30%; border-radius: 85% 0 70% 24%; --tilt: -14deg; }
+.flame-button[data-shape="core"] .flame-aura { width: 34%; height: 34%; border-radius: 50%; --tilt: 0deg; }
+.is-captured .flame-aura { animation-play-state: paused; }
+.is-captured .flame-orb { opacity: .37; transform: scale(.79); }
+.is-captured::after {
+  content: "✓";
+  position: absolute;
+  top: .25rem;
+  right: 14%;
+  color: #21140d;
+  background: var(--flame);
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  font-size: .86rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+@keyframes flicker {
+  from { transform: rotate(calc(var(--tilt, -27deg) - 6deg)) scale(.9, 1.07); opacity: .83; }
+  to { transform: rotate(calc(var(--tilt, -27deg) + 5deg)) scale(1.05, .96); opacity: 1; }
+}
+.fusion-burst {
+  position: absolute;
+  display: none;
+  inset: 0;
+  place-items: center;
+  pointer-events: none;
+}
+.is-fusing .fusion-burst { display: grid; }
+.fusion-burst span {
+  grid-area: 1 / 1;
+  width: min(32vw, 190px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #ffdb9c;
+  background: radial-gradient(circle, #fff2c7, #e9914a76 32%, transparent 68%);
+  box-shadow: 0 0 30px #ec9d547e;
+  opacity: 0;
+  animation: burst .7s ease-out both;
+}
+.fusion-burst span:nth-child(2) { animation-delay: .1s; }
+.fusion-burst span:nth-child(3) { animation-delay: .18s; }
+@keyframes burst { 0% { transform: scale(.15); opacity: .95; } 40% { opacity: .85; } 100% { transform: scale(2.5); opacity: 0; } }
+.arena-message {
+  position: relative;
+  color: #ffdb9e;
+  text-align: center;
+  font: bold clamp(1.25rem, 4vw, 2rem)/1.3 var(--serif);
+  letter-spacing: .07em;
+  padding: .6rem;
+}
+.is-complete { background: radial-gradient(ellipse, #76351e, #2b1714 48%, #130f0f 83%); }
+.is-complete .arena-message { text-shadow: 0 0 22px #e86a31; }
+.game-bottom { grid-template-columns: minmax(0, 1fr) auto; }
+.game-actions { display: flex; gap: .55rem; }
+.game-update { padding: 0 1rem .85rem; text-align: center; color: var(--muted); font-size: .92rem; }
+.game-status { min-height: 1.55rem; color: var(--gold-bright); }
+.flame-guide { border-top: 1px solid var(--line); }
+.flame-guide summary { min-height: 44px; padding: .55rem 1rem; color: var(--gold-bright); cursor: pointer; }
+.flame-guide :is(summary, ul):focus-visible { outline: 2px solid var(--gold-bright); outline-offset: -4px; }
+.flame-guide summary span { margin-inline-start: .5rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.flame-guide ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
+  gap: .45rem;
+  max-height: 12rem;
+  overflow: auto;
+  margin: 0 .85rem .75rem;
+  padding: .2rem;
+  list-style: none;
+}
+.flame-guide li {
+  display: grid;
+  gap: .04rem;
+  border: 1px solid var(--line);
+  border-inline-start: 2px solid var(--flame);
+  background: #241915;
+  padding: .3rem .48rem;
+  font-size: .88rem;
+  overflow-wrap: anywhere;
+}
+.flame-guide small { color: var(--quiet); }
+.game-note { max-width: 940px; margin: .75rem auto 0; color: var(--muted); text-align: center; font-size: .85rem; }
+@media (max-width: 540px) {
+  .game-arena { min-height: 180px; padding-block: .65rem; }
+  .flame-list { max-width: 395px; gap: .4rem; }
+  .flame-button { min-width: 80px; font-size: .8rem; }
+  .game-bottom { grid-template-columns: 1fr; gap: .85rem; }
+  .game-actions > * { flex: 1; }
+}
+/* Keep pinch zoom available; simplify expensive effects only on touch WebKit. */
+@supports (-webkit-touch-callout: none) {
+  @media (pointer: coarse) {
+    .game-ring { box-shadow: 0 0 0 8px #c18a5413; }
+    .flame-aura { animation: none; box-shadow: 0 0 8px var(--flame); }
+    .flame-orb { transition: none; box-shadow: none; }
+    .fusion-burst span { box-shadow: none; }
+    .fusion-burst span:nth-child(n+2) { display: none; }
+    .game-board { box-shadow: none; }
+  }
+}
+.game-arena.is-offscreen .flame-aura,.game-arena.is-background .flame-aura { animation-play-state: paused; }

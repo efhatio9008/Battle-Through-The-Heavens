@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 38 20 20 38 2 20Z' fill='%2318110e' stroke='%23e2ba7e' stroke-width='2'/%3E%3Cpath d='M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z' fill='%23e2ba7e'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0f0d0c">
+  <meta name="description" content="斗破苍穹九周年纪念网站。重温萧炎成长之路，体验异火融合，回望九年相伴。">
+  <title>异火焚诀 · Flame Emperor Ascension | 斗破苍穹九周年</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/game.css" data-page-style>
+  <link rel="stylesheet" href="../css/victory.css" data-page-style>
+  <script type="module" src="../js/site-router.js"></script>
+</head>
+<body class="page-game">
+  <a class="skip-link" href="#main">跳至主要内容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 38 20 20 38 2 20Z" fill="none" stroke="currentColor"/><path d="M20 7 33 20 20 33 7 20Z" fill="none" stroke="currentColor" opacity=".35"/><path d="M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z" fill="currentColor"/><path d="M20 27c-2-2-1-4 1-6 0 2 3 3 1 5Z" fill="#18110e"/></svg><span><b>斗破苍穹</b><small>九周年纪念</small></span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="../index.html">Home</a>
+        <a href="../pages/game.html" aria-current="page">Game</a>
+        <a href="../pages/journey.html">Journey</a>
+        <a href="../pages/video.html">Video</a>
+        <a href="../pages/dialogue.html">Dialogue</a>
+        <a href="../pages/character.html">Character</a>
+      </nav>
+      <span class="header-edition" lang="en">09<span> / </span>ANNIVERSARY</span>
+    </div>
+  </header>
+  <main id="main" class="shell inner-main">
+    <header class="page-heading">
+      <p class="eyebrow" lang="en"><span></span> FLAME EMPEROR ASCENSION <span></span></p>
+      <h1>异火焚诀</h1>
+      <p>点亮当前异火，逐批融合。二十二火归宗后，炼成第 23 种帝炎。</p>
+    </header>
+    <section class="game-board" aria-labelledby="stage-title">
+      <div class="game-overview">
+        <div><p class="mini-label" data-stage-number>第一阶段</p><h2 id="stage-title">初炼异火</h2></div>
+        <div class="game-progress">
+          <label for="cultivation">修炼进度 <span data-progress-text>0 / 6</span></label>
+          <progress id="cultivation" value="0" max="6">0 / 6</progress>
+        </div>
+      </div>
+      <div class="game-arena" data-arena>
+        <div class="game-ring" aria-hidden="true"></div>
+        <div class="flame-list" data-flames role="group" aria-label="本阶段可收集的异火"></div>
+        <p class="arena-message" data-arena-message hidden></p>
+        <noscript><p>请启用 JavaScript 来收集与融合异火。</p></noscript>
+        <div class="fusion-burst" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="game-bottom">
+        <div class="game-energy">
+          <label for="energy">累计收集 <span data-count>0 / 22</span></label>
+          <progress id="energy" value="0" max="22">0 / 22</progress>
+        </div>
+        <div class="game-actions">
+          <button class="button button-gold" type="button" data-fuse disabled>融合</button>
+          <button class="button button-gold" type="button" data-replay hidden>重看庆祝</button>
+          <button class="button button-quiet" type="button" data-restart>重置游戏</button>
+        </div>
+      </div>
+      <div class="game-update">
+        <p data-requirement>累计收集 5 种异火后进行第一次融合。</p>
+        <p class="game-status" role="status" data-status>选择一种异火，开启修炼。</p>
+      </div>
+      <details class="flame-guide" data-guide hidden>
+        <summary>已解锁异火图鉴 <span data-guide-count>5 / 22</span></summary>
+        <ul data-guide-list tabindex="0" aria-label="已解锁异火"></ul>
+      </details>
+    </section>
+    <p class="game-note">异火的解锁顺序、融合阶段及帝炎诞生方式均为本纪念游戏设计。</p>
+
+    <dialog class="victory" aria-labelledby="victory-title" aria-describedby="victory-subtitle">
+      <div class="victory-scene">
+        <div class="victory-art" aria-hidden="true"></div>
+        <div class="victory-effect" aria-hidden="true">
+          <div class="victory-seal"></div>
+          <div class="victory-sparks" data-sparks></div>
+          <div class="victory-ember"><i></i></div>
+        </div>
+        <div class="victory-copy">
+          <p class="eyebrow"><span></span> 第 23 种异火 · 帝炎诞生 <span></span></p>
+          <h2 id="victory-title">炎帝归位</h2>
+          <p id="victory-subtitle">万火归宗 · 斗帝降临</p>
+          <p class="victory-tribute">“九年相伴，恭贺萧炎成帝！”</p>
+        </div>
+        <div class="victory-actions">
+          <button class="button button-quiet" type="button" data-close-victory autofocus>返回游戏</button>
+          <button class="button button-gold" type="button" data-restart>重置游戏</button>
+        </div>
+      </div>
+    </dialog>
+  </main>
+  <footer class="site-footer shell">
+    <span>斗破苍穹 · 九周年纪念</span>
+    <span lang="en">2017 — 2026 <i></i> NINE YEARS OF FLAMES</span>
+  </footer>
+</body>
+</html>

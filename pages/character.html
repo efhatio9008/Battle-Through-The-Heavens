@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 38 20 20 38 2 20Z' fill='%2318110e' stroke='%23e2ba7e' stroke-width='2'/%3E%3Cpath d='M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z' fill='%23e2ba7e'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0f0d0c">
+  <meta name="description" content="斗破苍穹九周年纪念网站。重温萧炎成长之路，体验异火融合，回望九年相伴。">
+  <title>炎帝降临 · Xiao Yan 3D | 斗破苍穹九周年</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/character.css" data-page-style>
+  <script type="module" src="../js/site-router.js"></script>
+</head>
+<body class="page-character">
+  <a class="skip-link" href="#main">跳至主要内容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 38 20 20 38 2 20Z" fill="none" stroke="currentColor"/><path d="M20 7 33 20 20 33 7 20Z" fill="none" stroke="currentColor" opacity=".35"/><path d="M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z" fill="currentColor"/><path d="M20 27c-2-2-1-4 1-6 0 2 3 3 1 5Z" fill="#18110e"/></svg><span><b>斗破苍穹</b><small>九周年纪念</small></span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="../index.html">Home</a>
+        <a href="../pages/game.html">Game</a>
+        <a href="../pages/journey.html">Journey</a>
+        <a href="../pages/video.html">Video</a>
+        <a href="../pages/dialogue.html">Dialogue</a>
+        <a href="../pages/character.html" aria-current="page">Character</a>
+      </nav>
+      <span class="header-edition" lang="en">09<span> / </span>ANNIVERSARY</span>
+    </div>
+  </header>
+  <main id="main" class="shell inner-main character-main">
+    <header class="page-heading">
+      <p class="eyebrow" lang="en"><span></span> THE FLAME EMPEROR · 3D <span></span></p>
+      <h1>炎帝降临</h1>
+      <p>九年修炼，一代炎帝。亲手唤醒萧炎，见证他的战斗身姿。</p>
+    </header>
+    <div class="character-layout">
+      <section class="character-stage" aria-label="萧炎三维模型">
+        <div class="character-viewport" data-viewport>
+          <div class="character-halo" aria-hidden="true"></div>
+          <canvas data-model-canvas tabindex="0" aria-label="萧炎三维模型，拖动旋转，滚轮或双指缩放；也可使用右侧控制按钮"></canvas>
+          <div class="character-overlay" data-overlay role="status"><span class="character-loader" aria-hidden="true"></span><p data-load-message>正在准备炎帝模型……</p><button class="button button-quiet" type="button" data-retry hidden>重新载入</button></div>
+          <div class="character-badge"><span>✦</span> XIAO YAN / 09</div>
+        </div>
+        <div class="character-stage-foot"><span>拖动旋转 · 双指 / 滚轮缩放</span><span data-quality>自适应画质</span></div>
+      </section>
+      <section class="character-panel" aria-labelledby="character-controls-title">
+        <p class="eyebrow" lang="en"><span></span> CONTROL PANEL</p>
+        <h2 id="character-controls-title">炎帝控制面板</h2>
+        <fieldset data-controls disabled>
+          <legend class="sr-only">人物控制</legend>
+          <div class="character-group"><h3>动画动作 <small>ANIMATION</small></h3>
+            <div class="character-motion" role="group" aria-label="选择动作">
+              <button type="button" class="button button-quiet" data-motion="0" aria-pressed="true">拳击</button>
+              <button type="button" class="button button-quiet" data-motion="1" aria-pressed="false">前踢</button>
+              <button type="button" class="button button-quiet" data-motion="2" aria-pressed="false">跑步</button>
+            </div>
+            <div class="character-two"><button class="button button-gold" type="button" data-play aria-pressed="false">播放动画</button><button class="button button-quiet" type="button" data-stop>停止 / 复位</button></div>
+            <label class="character-range" for="motion-speed"><span>动画速度</span><output data-speed-output>1.0×</output></label>
+            <input type="range" id="motion-speed" min="0.5" max="2" step="0.1" value="1" data-speed>
+          </div>
+          <div class="character-group"><h3>视角控制 <small>VIEW</small></h3>
+            <div class="character-two"><button type="button" class="button button-quiet" data-turn="-1">↶ 左旋</button><button type="button" class="button button-quiet" data-turn="1">右旋 ↷</button><button type="button" class="button button-quiet" data-zoom="-1">− 缩小</button><button type="button" class="button button-quiet" data-zoom="1">＋ 放大</button></div>
+            <div class="character-two"><button type="button" class="button button-quiet" data-spin aria-pressed="false">自动旋转：关</button><button type="button" class="button button-quiet" data-reset-view>重置视角</button></div>
+          </div>
+          <div class="character-group character-bottom"><span>模型显示</span><button class="button button-quiet" type="button" data-visible aria-pressed="true">显示：开</button></div>
+        </fieldset>
+        <p class="character-status" data-character-status role="status">等待模型载入。</p>
+      </section>
+    </div>
+    <p class="character-note">九周年纪念 3D 互动展示 · 动作与视角可自由切换，移动端自动采用轻量画质。</p>
+  </main>
+  <footer class="site-footer shell">
+    <span>斗破苍穹 · 九周年纪念</span>
+    <span lang="en">2017 — 2026 <i></i> NINE YEARS OF FLAMES</span>
+  </footer>
+</body>
+</html>

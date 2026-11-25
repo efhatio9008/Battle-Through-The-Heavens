@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 38 20 20 38 2 20Z' fill='%2318110e' stroke='%23e2ba7e' stroke-width='2'/%3E%3Cpath d='M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z' fill='%23e2ba7e'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0f0d0c">
+  <meta name="description" content="斗破苍穹九周年纪念网站。重温萧炎成长之路，体验异火融合，回望九年相伴。">
+  <title>萧炎对白 · Xiao Yan Dialogue | 斗破苍穹九周年</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/dialogue.css" data-page-style>
+  <script type="module" src="../js/site-router.js"></script>
+</head>
+<body class="page-dialogue">
+  <a class="skip-link" href="#main">跳至主要内容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 38 20 20 38 2 20Z" fill="none" stroke="currentColor"/><path d="M20 7 33 20 20 33 7 20Z" fill="none" stroke="currentColor" opacity=".35"/><path d="M21 10c1 5-5 6-3 11 2-1 4-3 5-5 4 4 5 9 1 12-4 3-10 0-10-4 0-6 5-8 7-14Z" fill="currentColor"/><path d="M20 27c-2-2-1-4 1-6 0 2 3 3 1 5Z" fill="#18110e"/></svg><span><b>斗破苍穹</b><small>九周年纪念</small></span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="../index.html">Home</a>
+        <a href="../pages/game.html">Game</a>
+        <a href="../pages/journey.html">Journey</a>
+        <a href="../pages/video.html">Video</a>
+        <a href="../pages/dialogue.html" aria-current="page">Dialogue</a>
+        <a href="../pages/character.html">Character</a>
+      </nav>
+      <span class="header-edition" lang="en">09<span> / </span>ANNIVERSARY</span>
+    </div>
+  </header>
+  <main id="main" class="shell inner-main">
+    <header class="page-heading">
+      <p class="eyebrow" lang="en"><span></span> XIAO YAN DIALOGUE <span></span></p>
+      <h1>萧炎对白</h1>
+      <p>本页面为纪念性质的预设对白互动，并非真实 AI 或官方角色对话服务。</p>
+    </header>
+    <div class="dialogue-layout">
+      <section class="dialogue-panel profile-panel" aria-labelledby="profile-title">
+        <h2 id="profile-title">个人资料</h2>
+        <p class="profile-intro">可以使用昵称。资料和对话仅在当前页面使用。</p>
+        <form class="profile-form" data-profile novalidate>
+          <div class="profile-field">
+            <label for="profile-name">姓名 <span lang="en">Name</span></label>
+            <input id="profile-name" type="text" required maxlength="24" autocomplete="off" aria-describedby="error-name">
+            <p class="field-error" id="error-name" hidden></p>
+          </div>
+          <div class="profile-field">
+            <label for="profile-age">年龄 <span lang="en">Age</span></label>
+            <input id="profile-age" type="text" inputmode="numeric" required maxlength="3" autocomplete="off" aria-describedby="error-age">
+            <p class="field-error" id="error-age" hidden></p>
+          </div>
+          <div class="profile-field">
+            <label for="profile-career">事业／行业 <span lang="en">Career</span></label>
+            <input id="profile-career" type="text" required maxlength="60" autocomplete="off" aria-describedby="error-career">
+            <p class="field-error" id="error-career" hidden></p>
+          </div>
+          <div class="profile-field">
+            <label for="profile-education">学历 <span lang="en">Education</span></label>
+            <input id="profile-education" type="text" required maxlength="40" autocomplete="off" aria-describedby="error-education">
+            <p class="field-error" id="error-education" hidden></p>
+          </div>
+          <div class="profile-field goal-field">
+            <label for="profile-goal">人生目标 <span lang="en">Life Goal</span></label>
+            <textarea id="profile-goal" rows="2" required minlength="2" maxlength="180" autocomplete="off" aria-describedby="goal-hint error-goal"></textarea>
+            <p class="field-hint" id="goal-hint">用 2–180 个字符写下你想实现的目标。</p>
+            <p class="field-error" id="error-goal" hidden></p>
+          </div>
+          <button class="button button-gold" type="submit" disabled>开启对白</button>
+        </form>
+        <div class="profile-summary" data-summary hidden>
+          <dl>
+            <div><dt>姓名</dt><dd data-profile-value="name"></dd></div>
+            <div><dt>年龄</dt><dd data-profile-value="age"></dd></div>
+            <div><dt>事业／行业</dt><dd data-profile-value="career"></dd></div>
+            <div><dt>学历</dt><dd data-profile-value="education"></dd></div>
+            <div><dt>人生目标</dt><dd data-profile-value="goal"></dd></div>
+          </dl>
+          <button class="button button-quiet" type="button" data-edit>重新填写资料</button>
+        </div>
+      </section>
+
+      <section class="dialogue-panel chat-panel" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <span class="chat-avatar" aria-hidden="true">炎</span>
+          <div><h2 id="chat-title">萧炎</h2><p>纪念对白</p></div>
+          <button class="button button-quiet" type="button" data-clear disabled>清除对话</button>
+        </header>
+        <div class="chat-log" data-chat-log role="log" aria-labelledby="chat-title" aria-relevant="additions" tabindex="0">
+          <p class="chat-empty" data-chat-empty>填写个人资料后，即可开始对白。</p>
+        </div>
+        <div class="chat-topics" role="group" aria-label="选择对白问题" data-topics hidden></div>
+      </section>
+    </div>
+    <noscript><p class="dialogue-noscript">请启用 JavaScript 来使用纪念对白。</p></noscript>
+  </main>
+  <footer class="site-footer shell">
+    <span>斗破苍穹 · 九周年纪念</span>
+    <span lang="en">2017 — 2026 <i></i> NINE YEARS OF FLAMES</span>
+  </footer>
+</body>
+</html>
